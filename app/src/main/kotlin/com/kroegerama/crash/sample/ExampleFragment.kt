@@ -15,10 +15,14 @@ class ExampleFragment : Fragment(R.layout.example_fragment) {
 
     private val args by navArgs<ExampleFragmentArgs>()
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         enterTransition = Fade().setDuration(600)
         exitTransition = Fade().setDuration(600)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         val depth = args.depth
         view.findViewById<MaterialTextView>(R.id.tvText).text = buildSpannedString {
