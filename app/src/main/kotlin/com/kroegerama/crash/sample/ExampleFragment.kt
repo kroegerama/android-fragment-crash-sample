@@ -7,9 +7,9 @@ import androidx.core.text.buildSpannedString
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import androidx.transition.Fade
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textview.MaterialTextView
-import com.google.android.material.transition.MaterialFadeThrough
 
 class ExampleFragment : Fragment(R.layout.example_fragment) {
 
@@ -17,8 +17,8 @@ class ExampleFragment : Fragment(R.layout.example_fragment) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        enterTransition = MaterialFadeThrough().setDuration(600)
-        exitTransition = MaterialFadeThrough().setDuration(600)
+        enterTransition = Fade().setDuration(600)
+        exitTransition = Fade().setDuration(600)
 
         val depth = args.depth
         view.findViewById<MaterialTextView>(R.id.tvText).text = buildSpannedString {
